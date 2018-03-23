@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>系统注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Baxster Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- Bootstrap Core CSS -->
+    <link th:href="@{/demo/css/bootstrap.css}" rel='stylesheet' type='text/css'/>
+    <!-- Custom CSS -->
+    <link th:href="@{/demo/css/style.css}" rel='stylesheet' type='text/css'/>
+    <!-- font CSS -->
+    <link rel="icon" th:href="@{/demo/images/favicon.ico}" type="image/x-icon">
+    <!-- font-awesome icons -->
+    <link th:href="@{/demo/css/font-awesome.css}" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- chart -->
+    <script th:src="@{/demo/js/Chart.js}"></script>
+    <!-- //chart -->
+    <!-- js-->
+    <script th:src="@{/demo/js/jquery-1.11.1.min.js}"></script>
+    <script th:src="@{/demo/js/modernizr.custom.js}"></script>
+    <!--webfonts-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic'
+          rel='stylesheet' type='text/css'>
+    <!--//webfonts-->
+    <!--animate-->
+    <link th:href="@{/demo/css/animate.css}" rel="stylesheet" type="text/css" media="all">
+    <script th:src="@{/demo/js/wow.min.js}"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//end-animate-->
+    <!-- Metis Menu -->
+    <script th:src="@{/demo/js/metisMenu.min.js}"></script>
+    <script th:src="@{/demo/js/custom.js}"></script>
+    <link th:href="@{/demo/css/custom.css}" rel="stylesheet">
+    <!--//Metis Menu -->
+
+    <link th:href="@{/demo/css/hover.css}" rel="stylesheet" media="all">
+</head>
+<body class="cbp-spmenu-push">
+<div class="main-content">
+    <!-- header-starts -->
+    <div class="sticky-header header-section ">
+        <div class="header-left">
+            <!--logo -->
+            <div class="logo">
+                <a href="/system/info.htm">
+                    <ul>
+                        <li><img th:src="@{/demo/images/logo1.png}" alt=""/></li>
+                        <li><h1>Baxster</h1></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </a>
+            </div>
+            <!--//logo-->
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //header-ends -->
+    <!-- main content start-->
+    <div id="page-wrapper">
+        <div class="main-page">
+            <div class="alert alert-danger" role="alert" th:if="${message != null }">
+                <strong><label th:text="${message}"></label></strong>
+            </div>
+            <!--grids-->
+            <div class="grids">
+                <div class="panel panel-widget forms-panel">
+                    <div class="forms">
+                        <div class="form-three widget-shadow">
+                            <div class=" panel-body-inputin">
+                                <form class="form-horizontal" action="/system/register.do" method="post">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">系统编号</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group">
+													<span class="input-group-addon">
+														<i class="fa fa-renren"></i>
+													</span>
+                                                <input type="text" class="form-control1" name="appCode" th:value="${info.appCode}" required placeholder="系统编号">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">系统名称</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group">
+													<span class="input-group-addon">
+														<i class="fa fa-key"></i>
+													</span>
+                                                <input type="text" class="form-control1" name="appName" th:value="${info.appName}" required placeholder="系统名称">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">登出地址</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group input-icon right">
+													<span class="input-group-addon">
+														<i class="fa fa-link"></i>
+													</span>
+                                                <input class="form-control1" type="text" name="logoutUrl" th:value="${info.logoutUrl}"  required placeholder="登出地址">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">授权地址</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group input-icon right">
+													<span class="input-group-addon">
+														<i class="fa fa-link"></i>
+													</span>
+                                                <input type="text" class="form-control1" name="redirectUrl" th:value="${info.redirectUrl}" required placeholder="授权地址">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">添加人</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group input-icon right">
+													<span class="input-group-addon">
+														<i class="fa fa-users"></i>
+													</span>
+                                                <input class="form-control1" type="text" name="adder" th:value="${info.adder}" required placeholder="添加人">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" align="right">
+                                        <label class="col-md-2 control-label"></label>
+                                        <div class="col-md-8">
+                                            <div class="input-group" >
+                                                <input type="submit" class="btn btn-primary" value="注册">
+
+                                                <input type="reset" class="btn btn-danger" value="重置">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//grids-->
+
+        </div>
+    </div>
+</div>
+<!-- Bootstrap Core JavaScript -->
+
+<script type="text/javascript" th:src="@{/demo/js/bootstrap.min.js}"></script>
+
+<script type="text/javascript" th:src="@{/demo/js/dev-loaders.js}"></script>
+<script type="text/javascript" th:src="@{/demo/js/dev-layout-default.js}"></script>
+<script type="text/javascript" th:src="@{/demo/js/jquery.marquee.js}"></script>
+<link th:href="@{/demo/css/bootstrap.min.css}" rel="stylesheet">
+
+<script type="text/javascript" th:src="@{/demo/js/jquery.jqcandlestick.min.js}"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/demo/css/jqcandlestick.css}"/>
+
+<!--max-plugin-->
+<script type="text/javascript" th:src="@{/demo/js/plugins.js}"></script>
+<!--//max-plugin-->
+
+<!--scrolling js-->
+<script th:src="@{/demo/js/jquery.nicescroll.js}"></script>
+<script th:src="@{/demo/js/scripts.js}"></script>
+<!--//scrolling js-->
+</body>
+</html>

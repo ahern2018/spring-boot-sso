@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev #dev #prod
+
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+    # 静态文件请求匹配方式
+  static-path-pattern: /**

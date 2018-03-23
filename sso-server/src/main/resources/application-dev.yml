@@ -1,0 +1,47 @@
+#测试服务器
+spring:
+  datasource:
+    #数据源配置
+    url: jdbc:mysql://localhost:3306/singlesignon?useSSL=true  #地址
+    username: root  #用户名
+    password: root  #密码
+    driver-class-name: com.mysql.jdbc.Driver  #驱动
+    max-idle: 10  #连接池的最大空闲连接
+    max-wait: 10000 #连接池最大阻塞时间
+    min-idle: 5 #连接池的最小空闲连接
+    initial-size: 5 #连接池初始化大小
+
+#配置服务器名称
+  application:
+    name: sso-server
+
+#开始自动更新表结构
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+#配置端口号
+server:
+  port: 8001  #端口号
+
+#配置注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6001/eureka/
+
+ribbon:
+  ConnectTimeout: 500
+  ReadTimeout: 2000
+  OkToRetryOnAllOperations: true
+  MaxAutoRetriesNextServer: 3
+  MaxAutoRetries: 1
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutinMilliseconds: 5OOO
+
